@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="conferencebookingsystemModelStoreContainer" CdmEntityContainer="conferencebookingsystemEntities">
+    <EntitySetMapping Name="Registrations">
+      <EntityTypeMapping TypeName="conferencebookingsystemModel.Registration">
+        <MappingFragment StoreEntitySet="Registration">
+          <ScalarProperty Name="bookingno" ColumnName="bookingno" />
+          <ScalarProperty Name="companyname" ColumnName="companyname" />
+          <ScalarProperty Name="bookingdate" ColumnName="bookingdate" />
+          <ScalarProperty Name="bookingtime" ColumnName="bookingtime" />
+          <ScalarProperty Name="mambercount" ColumnName="mambercount" />
+          <ScalarProperty Name="systems" ColumnName="systems" />
+          <ScalarProperty Name="internet" ColumnName="internet" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

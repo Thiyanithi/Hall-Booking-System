@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="conferencebookingsystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Registration">
+    <Key>
+      <PropertyRef Name="bookingno" />
+    </Key>
+    <Property Name="bookingno" Type="int" Nullable="false" />
+    <Property Name="companyname" Type="varchar" MaxLength="50" />
+    <Property Name="bookingdate" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="bookingtime" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="mambercount" Type="int" />
+    <Property Name="systems" Type="varchar" MaxLength="3" />
+    <Property Name="internet" Type="varchar" MaxLength="3" />
+    <Property Name="telephone" Type="varchar" MaxLength="3" />
+  </EntityType>
+  <EntityContainer Name="conferencebookingsystemModelStoreContainer">
+    <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

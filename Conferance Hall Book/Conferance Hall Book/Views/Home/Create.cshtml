@@ -1,0 +1,114 @@
+﻿@model Conferance_Hall_Book.Models.Registration
+@using System.Web.Mvc;
+
+@{
+    ViewBag.Title = "Create";
+    int count =   ViewBag.count + 1;
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <br /><br />
+    <div class="form-horizontal">
+        <h2 style="color: LightCoral; font-family: 'Times New Roman'">New Registration</h2>
+        <hr />
+        <br />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.Label("Hall Booking No:", new { @class = "control-label col-md-2",@Style = "color:blue;font-family:Times New Romen" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.bookingno, new { @Value = count, disabled = "disabled", @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.bookingno)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Company Name:", new { @class = "control-label col-md-2", @Style = "color:blue;font-family:Times New Romen" })
+            <div class="col-md-10">
+                <select name="Companyname" style="width:280px;height:30px" class="form-control">
+                    <option value="">--Select--</option>
+                    <option value="5G">Fifth Genration</option>
+                    <option value="Webstix">Webstix</option>
+                    <option value="KirthiLabs">Kirthi Labs</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.companyname)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Date:", new { @class = "control-label col-md-2", @Style = "color:blue;font-family:Times New Romen" })
+            <div class="col-md-10" style="color:red;font-family:'Times New Roman'">
+                @Html.TextBoxFor(model => model.bookingdate, new { @class = "form-control" })Ex: 00-00-0000
+                @Html.ValidationMessageFor(model => model.bookingdate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Time:", new { @class = "control-label col-md-2", @Style = "color:blue;font-family:Times New Romen" })
+            <div class="col-md-10" style="color:red;font-family:'Times New Roman'">
+                @Html.TextBoxFor(model => model.bookingtime, new { @class = "form-control" })Ex:00.00 AM/PM
+                @Html.ValidationMessageFor(model => model.bookingtime)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("No of Member(s):", new { @class = "control-label col-md-2", @Style = "color:blue;font-family:Times New Romen" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.mambercount, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.mambercount)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Systems:", new { @class = "control-label col-md-2", @Style = "color:blue;font-family:Times New Romen" })
+            <div class="col-md-10">
+                <select name="systems" style="width:280px;height:30px" class="form-control">
+                    <option value="">--Select--</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>               
+                 @Html.ValidationMessageFor(model => model.systems)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Internet:", new { @class = "control-label col-md-2", @Style = "color:blue;font-family:Times New Romen" })
+            <div class="col-md-10">
+                <select name="Internet" style="width:280px;height:30px" class="form-control">
+                    <option value="">--Select--</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>                
+                @Html.ValidationMessageFor(model => model.internet)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Telephone:", new { @class = "control-label col-md-2", @Style = "color:blue;font-family:Times New Romen" })
+            <div class="col-md-10">
+                <select name="Telephone" style="width:280px;height:30px" class="form-control">
+                    <option value="">--Select--</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+                @Html.ValidationMessageFor(model => model.telephone)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div style="color:blue;font-family:Times New Romen">
+    @Html.ActionLink("Back to Home", "AdminIndex", "Home")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

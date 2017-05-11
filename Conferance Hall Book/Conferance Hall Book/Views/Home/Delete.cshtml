@@ -1,0 +1,50 @@
+﻿@model Conferance_Hall_Book.Models.Registration
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2 style="color: LightCoral; font-family: 'Times New Roman'">Delete Existing Booking</h2>
+
+<h4 style="color:red; font-family: 'Times New Roman'">Are you sure you want to delete this?</h4>
+<div>
+
+    <hr />
+    <table border="1" align="center" width="40%">
+        <tr>
+            <th>@Html.Label("Company Name:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th align="justify" style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.companyname)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("Date:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.bookingdate)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("Time:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.bookingtime)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("No of Member(s):", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.mambercount)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("System:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.systems)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("Internet:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.internet)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("Telephone:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.telephone)</th>
+        </tr>
+    </table>    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to Home", "AdminIndex","Home")
+        </div>
+    }
+</div>

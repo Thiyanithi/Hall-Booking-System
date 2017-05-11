@@ -1,0 +1,44 @@
+﻿@model Conferance_Hall_Book.Models.Registration
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h2 style="color: LightCoral; font-family: 'Times New Roman'">Details about Registration</h2>
+	<hr />
+    <table border="1" align="center" width="40%">
+        <tr>
+            <th>@Html.Label("Company Name:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th align="justify" style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.companyname)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("Date:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.bookingdate)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("Time:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.bookingtime)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("No of Member(s):", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.mambercount)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("System:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.systems)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("Internet:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.internet)</th>
+        </tr>
+        <tr>
+            <th>@Html.Label("Telephone:", new { @Style = "color:DarkCyan ;font-family:Times New Romen" })</th>
+            <th style="color: SlateGray; font-family: Times New Romen">@Html.DisplayFor(model => model.telephone)</th>
+        </tr>
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.bookingno }) |
+    @Html.ActionLink("Back to Home", "AdminIndex", "Home")
+</p>

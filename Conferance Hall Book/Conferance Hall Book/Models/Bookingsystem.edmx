@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="conferencebookingsystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="bookingno" />
+          </Key>
+          <Property Name="bookingno" Type="int" Nullable="false" />
+          <Property Name="companyname" Type="varchar" MaxLength="50" />
+          <Property Name="bookingdate" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="bookingtime" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="mambercount" Type="int" />
+          <Property Name="systems" Type="varchar" MaxLength="3" />
+          <Property Name="internet" Type="varchar" MaxLength="3" />
+          <Property Name="telephone" Type="varchar" MaxLength="3" />
+        </EntityType>
+        <EntityContainer Name="conferencebookingsystemModelStoreContainer">
+          <EntitySet Name="Registration" EntityType="Self.Registration" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="conferencebookingsystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Registration">
+          <Key>
+            <PropertyRef Name="bookingno" />
+          </Key>
+          <Property Name="bookingno" Type="Int32" Nullable="false" />
+          <Property Name="companyname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="bookingdate" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="bookingtime" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="mambercount" Type="Int32" />
+          <Property Name="systems" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="internet" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+          <Property Name="telephone" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="conferencebookingsystemEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Registrations" EntityType="Self.Registration" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="conferencebookingsystemModelStoreContainer" CdmEntityContainer="conferencebookingsystemEntities">
+          <EntitySetMapping Name="Registrations">
+            <EntityTypeMapping TypeName="conferencebookingsystemModel.Registration">
+              <MappingFragment StoreEntitySet="Registration">
+                <ScalarProperty Name="bookingno" ColumnName="bookingno" />
+                <ScalarProperty Name="companyname" ColumnName="companyname" />
+                <ScalarProperty Name="bookingdate" ColumnName="bookingdate" />
+                <ScalarProperty Name="bookingtime" ColumnName="bookingtime" />
+                <ScalarProperty Name="mambercount" ColumnName="mambercount" />
+                <ScalarProperty Name="systems" ColumnName="systems" />
+                <ScalarProperty Name="internet" ColumnName="internet" />
+                <ScalarProperty Name="telephone" ColumnName="telephone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

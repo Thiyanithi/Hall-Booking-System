@@ -1,0 +1,49 @@
+﻿@model IEnumerable<Conferance_Hall_Book.Models.Registration>
+
+@{
+    ViewBag.Title = "Index";
+}
+<br />
+<center><h2 style="color:red;font-family:'Times New Roman'">Welcome to Our Page</h2></center>
+<hr /><br />
+<br />
+<p style="color:blue;font-family:'Times New Roman'">
+    @Html.ActionLink("New Registration", "Create")
+</p>
+<br />
+<table class="table" align="center" border="1" width="80%">
+    <tr style="color:Teal;font-family:'Times New Roman'">
+        <th>Company-Name</th>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Member-Count</th>
+        <th>Systems</th>
+        <th>Internet</th>
+        <th>Telephone</th>
+        <th>Options</th>
+    </tr>
+
+    @foreach (var item in Model)
+{
+    <tr style="color: LightSlateGray; font-family: 'Times New Roman'; ">
+        <td>@Html.DisplayFor(modelItem => item.companyname)</td>
+        <td>@Html.DisplayFor(modelItem => item.bookingdate)</td>
+        <td>@Html.DisplayFor(modelItem => item.bookingtime)</td>
+        <td>@Html.DisplayFor(modelItem => item.mambercount)</td>
+        <td>@Html.DisplayFor(modelItem => item.systems)</td>
+        <td>@Html.DisplayFor(modelItem => item.internet)</td>
+        <td>@Html.DisplayFor(modelItem => item.telephone)</td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.bookingno }) |
+            @Html.ActionLink("Details", "Details", new { id = item.bookingno }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.bookingno })
+        </td>
+    </tr>
+}
+
+</table>
+<br />
+<br />
+<p style="color:blue;font-family:'Times New Roman'">
+    @Html.ActionLink("Log Out", "Index")
+</p>
